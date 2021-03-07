@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% extends "first_app/first_app_basic.html" %}
+
+{% block body_block %}
+    <h2>The GC Percentage of the sequence is - </h2>
+    <form method="post">
+      {% csrf_token %}
+      <label for="id_post">Input:</label>
+      <div class="col-md-8 text-left">
+    <!--Input-->
+        <textarea rows="3" cols="56" name="post" required id="id_post" />{{posted}}</textarea>
+      </div>
+      <br>
+      <!--Submit-->
+      <button type="submit" class="btn btn-dark">Calculate GC content</button>
+    </form>
+    <br>
+
+    <!--Output-->
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-2 text-right">
+        <strong>GC Content:</strong>
+      </div>
+      <div class="col-md-8 text-left">{{result}} percent</div>
+    </div>
+{% endblock %}

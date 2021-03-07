@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+{% extends "first_app/first_app_basic.html" %}
+
+{% block body_block %}
+    <h2>These are the list of gene ID's</h2>
+    <div class = "djangtwo">
+      {% if seqlist %}
+        {% for sid in seqlist %}
+          <li><a href="{{ sid.id }}"> {{ sid.sample_id }} </a></li>
+        {% endfor %}
+      {% else %}
+        <p> No sample id found</p>
+      {% endif %}
+    </div>
+{% endblock %}

@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+{% extends "first_app/first_app_basic.html" %}
+
+{% block body_block %}
+    <h2>This is the sequence of selected gene ID</h2>
+    <div class = "djangtwo">
+      <h2>Id - {{seqdetails.sample_id}}</h2>
+      <p> Sequence - <br> >{{seqdetails.sample_seq}}
+    </div>
+    <a class="btn btn-dark" href='{% url 'first_app:Seqper' %}'>Calculate GC content</a>
+{% endblock %}
